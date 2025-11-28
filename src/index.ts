@@ -12,7 +12,10 @@ const isWindows = process.platform === 'win32' || /^(msys|cygwin)$/.test(process
  *
  * @returns Architecture string: 'x64', 'arm64', 'ia32', 'arm', 'ia64', or raw uname output
  */
-export default function cpuArch(): string {
+
+export type Architecture = NodeJS.Architecture | 'ia64' | string;
+
+export default function cpuArch(): Architecture {
   // macOS: Detect Rosetta 2 and return actual CPU
   if (process.platform === 'darwin') {
     if (process.arch === 'arm64') return 'arm64';
