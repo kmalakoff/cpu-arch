@@ -24,5 +24,5 @@ export default function execSync(cmd: string, options: { encoding?: BufferEncodi
     functionExec = _require('function-exec-sync');
   }
   const workerPath = path.join(__dirname, 'worker.cjs');
-  return functionExec!({ callbacks: true }, workerPath, cmd, options);
+  return functionExec?.({ callbacks: true }, workerPath, cmd, options);
 }

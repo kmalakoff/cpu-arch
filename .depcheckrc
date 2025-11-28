@@ -1,1 +1,1 @@
-ignores: ["install-optional"]
+ignores: ["cpu-arch", "function-exec-sync"]
