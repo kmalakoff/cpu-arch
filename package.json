@@ -1,0 +1,64 @@
+{
+  "name": "cpu-arch",
+  "version": "0.0.1",
+  "description": "Detect CPU architecture (handles WoW64, Rosetta 2, ARM64)",
+  "keywords": [
+    "cpu",
+    "arch",
+    "architecture",
+    "detect",
+    "x64",
+    "arm64",
+    "ia32",
+    "wow64",
+    "rosetta"
+  ],
+  "homepage": "https://github.com/kmalakoff/cpu-arch#README.md",
+  "bugs": {
+    "url": "https://github.com/kmalakoff/cpu-arch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kmalakoff/cpu-arch.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Kevin Malakoff",
+    "email": "kmalakoff@gmail.com",
+    "url": "https://github.com/kmalakoff"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsds build",
+    "format": "biome check --write --unsafe",
+    "prepublishOnly": "tsds validate",
+    "test": "mocha --no-timeouts test/**/*.test.*",
+    "test:engines": "nvu engines tsds test:node --no-timeouts",
+    "version": "tsds version"
+  },
+  "dependencies": {
+    "function-exec-sync": "*"
+  },
+  "devDependencies": {
+    "@types/mocha": "*",
+    "@types/node": "*"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
+  "tsds": {
+    "source": "src/index.ts"
+  }
+}
