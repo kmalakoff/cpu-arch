@@ -1,6 +1,6 @@
 {
   "name": "cpu-arch",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Detect CPU architecture (handles WoW64, Rosetta 2, ARM64)",
   "keywords": [
     "cpu",
