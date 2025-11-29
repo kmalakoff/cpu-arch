@@ -130,8 +130,8 @@ describe('cpu-arch', () => {
   describe('edge cases', () => {
     const MAX_DURATION = 20 * 1000;
 
-    it('handles repeated calls efficiently', () => {
-      // this.timeout(MAX_DURATION);
+    it('handles repeated calls efficiently', function () {
+      this.timeout(MAX_DURATION);
 
       const start = Date.now();
       for (let i = 0; i < 10; i++) {
