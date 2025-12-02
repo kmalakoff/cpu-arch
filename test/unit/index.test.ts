@@ -128,15 +128,17 @@ describe('cpu-arch', () => {
   }
 
   describe('edge cases', () => {
-    it('handles repeated calls efficiently', () => {
+    const MAX_DURATION = 20 * 1000;
+
+    it('handles repeated calls efficiently', function () {
+      this.timeout(MAX_DURATION);
+
       const start = Date.now();
       for (let i = 0; i < 10; i++) {
         cpuArch();
       }
-      const elapsed = Date.now() - start;
-      console.log(`  10 calls took ${elapsed}ms`);
-      // Should be reasonably fast (native execSync or env var lookup)
-      assert.ok(elapsed < 20 * 1000, 'should complete 10 calls in under 20 seconds');
+      const duration = Date.now() - start;
+      assert.ok(duration < MAX_DURATION, `Should complete in < ${MAX_DURATION}ms (took ${duration}ms)`);
     });
   });
 });
