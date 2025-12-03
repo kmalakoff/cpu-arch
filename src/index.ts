@@ -1,3 +1,4 @@
+import { stringStartsWith } from './compat.ts';
 import execSync from './lib/execSync.ts';
 
 const isWindows = process.platform === 'win32' || /^(msys|cygwin)$/.test(process.env.OSTYPE || '');
@@ -44,8 +45,8 @@ export default function cpuArch(): Architecture {
     const uname = execSync('uname -m', { encoding: 'utf8' }).trim();
     if (uname === 'x86_64') return 'x64';
     if (uname === 'aarch64') return 'arm64';
-    if (uname.startsWith('armv7')) return 'arm';
-    if (uname.startsWith('armv6')) return 'arm';
+    if (stringStartsWith(uname, 'armv7')) return 'arm';
+    if (stringStartsWith(uname, 'armv6')) return 'arm';
     if (uname === 'i686' || uname === 'i386') return 'ia32';
     // Return as-is for ppc64, ppc64le, s390x, mips, etc.
     return uname;
