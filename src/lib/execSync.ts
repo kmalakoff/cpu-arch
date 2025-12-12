@@ -23,6 +23,7 @@ export default function execSync(cmd: string, options: { encoding?: BufferEncodi
   if (!functionExec) {
     functionExec = _require('function-exec-sync');
   }
-  const workerPath = path.join(__dirname, 'worker.cjs');
+  // Worker path is relative to dist/cjs/lib/ at runtime
+  const workerPath = path.join(__dirname, 'worker.js');
   return functionExec?.({ callbacks: true }, workerPath, cmd, options);
 }
