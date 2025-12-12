@@ -50,7 +50,7 @@
     "version": "tsds version"
   },
   "dependencies": {
-    "function-exec-sync": "^1.5.2"
+    "function-exec-sync": "^1.5.3"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
