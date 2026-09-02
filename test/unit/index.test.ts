@@ -42,7 +42,7 @@ describe('cpu-arch', () => {
 
   if (process.platform === 'win32') {
     describe('Windows-specific', () => {
-      it('uses PROCESSOR_ARCHITECTURE env var', () => {
+      it('uses PROCESSOR_ARCHITECTURE env let', () => {
         const arch = process.env.PROCESSOR_ARCHITEW6432 || process.env.PROCESSOR_ARCHITECTURE;
         assert.ok(arch, 'PROCESSOR_ARCHITECTURE should be set on Windows');
         console.log(`  PROCESSOR_ARCHITECTURE: ${process.env.PROCESSOR_ARCHITECTURE}`);
