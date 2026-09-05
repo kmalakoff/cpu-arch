@@ -1,1 +1,1 @@
-ignores: ["node-version-use", "ts-dev-stack", "cpu-arch", "function-exec-sync"]
+ignores: ["cpu-arch", "node-version-use", "ts-dev-stack", "function-exec-sync"]
