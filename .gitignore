@@ -8,6 +8,8 @@ npm-debug.log*
 
 # agents
 .agents/
-AGENTS.md
+.archive/
+.worktrees/
 .claude/
+AGENTS.md
 CLAUDE.md
